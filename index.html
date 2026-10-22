@@ -237,34 +237,101 @@
         );
     }
 
-    .demo-box {
-      max-width: 800px;
+    /* PRODUCT DEMONSTRATION */
+
+    .demo-section {
+      position: relative;
+      overflow: hidden;
+      background:
+        radial-gradient(
+          ellipse at 50% 15%,
+          rgba(100,230,176,0.07),
+          transparent 58%
+        );
+    }
+
+    .demo-section .section-heading {
+      margin-bottom: 36px;
+    }
+
+    .demo-section .section-heading h2 {
+      margin-bottom: 18px;
+    }
+
+    .demo-shell {
+      max-width: 960px;
       margin: 0 auto;
-      padding: 40px 25px;
-      text-align: center;
-      background: var(--panel);
-      border: 1px solid var(--border);
-      border-radius: 16px;
+      padding: 12px;
+      background: linear-gradient(
+        145deg,
+        rgba(100,230,176,0.18),
+        rgba(255,255,255,0.025) 45%,
+        rgba(100,230,176,0.07)
+      );
+      border: 1px solid rgba(100,230,176,0.23);
+      border-radius: 19px;
+      box-shadow: 0 25px 80px rgba(0,0,0,0.28);
     }
 
-    .demo-box h3 {
-      font-size: 24px;
-      margin-bottom: 12px;
+    .demo-player {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      overflow: hidden;
+      background: #000;
+      border-radius: 12px;
     }
 
-    .demo-box p {
+    .demo-player iframe {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+
+    .demo-caption {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      padding: 23px 12px 12px;
+    }
+
+    .demo-caption h3 {
+      font-size: 20px;
+      line-height: 1.35;
+      margin-bottom: 5px;
+    }
+
+    .demo-caption p {
       color: var(--muted);
-      margin-bottom: 22px;
+      font-size: 14px;
     }
 
-    .badge {
-      display: inline-block;
-      padding: 5px 10px;
-      border-radius: 20px;
-      background: var(--accent-dark);
+    .demo-label {
+      flex-shrink: 0;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 7px 11px;
+      border: 1px solid rgba(100,230,176,0.2);
+      border-radius: 30px;
+      background: rgba(100,230,176,0.06);
       color: var(--accent);
-      font-size: 12px;
+      font-size: 11px;
       font-weight: 700;
+      letter-spacing: 0.7px;
+      text-transform: uppercase;
+    }
+
+    .demo-label::before {
+      content: "";
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--accent);
+      box-shadow: 0 0 9px rgba(100,230,176,0.6);
     }
 
     .partnership {
@@ -388,6 +455,26 @@
       .nav-link,
       .x-link {
         font-size: 12px;
+      }
+
+      .demo-shell {
+        padding: 6px;
+        border-radius: 13px;
+      }
+
+      .demo-player {
+        border-radius: 8px;
+      }
+
+      .demo-caption {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 12px;
+        padding: 17px 9px 9px;
+      }
+
+      .demo-caption h3 {
+        font-size: 18px;
       }
     }
   </style>
@@ -567,73 +654,47 @@
       </div>
     </section>
 
-    <!-- PRODUCT DEMO -->
+    <!-- PRODUCT DEMONSTRATION -->
 
-    <section id="demo">
+    <section id="demo" class="demo-section">
       <div class="container">
 
         <div class="section-heading">
+          <div class="eyebrow">Product Demonstration</div>
+
           <h2>See InsiderRadar in action.</h2>
 
           <p>
-            Explore how the platform presents market-bias information
-            and how its available alert features fit into a trader's
-            workflow.
+            Explore the platform's market analysis across selected
+            currency pairs and timeframes, with a comparison against
+            TradingView.
           </p>
         </div>
 
-        <div class="demo-box">
-          <span class="badge">PRODUCT DEMONSTRATION</span>
+        <div class="demo-shell">
 
-          <h3>InsiderRadar Demo</h3>
+          <div class="demo-player">
+            <iframe
+              src="https://www.youtube-nocookie.com/embed/uk6xFnjoy78"
+              title="InsiderRadar Product Demonstration"
+              loading="lazy"
+              referrerpolicy="strict-origin-when-cross-origin"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen>
+            </iframe>
+          </div>
 
-          <p>
-            The product demonstration video will be published here.
-          </p>
+          <div class="demo-caption">
+            <div>
+              <h3>InsiderRadar — Product Walkthrough</h3>
+              <p>
+                Market intelligence. Multiple timeframes. A more
+                convenient analytical workflow.
+              </p>
+            </div>
 
-          <span class="badge">Coming Soon</span>
-        </div>
-
-      </div>
-    </section>
-
-    <!-- EARLY USERS -->
-
-    <section>
-      <div class="container">
-
-        <div class="section-heading">
-          <h2>Early User Feedback</h2>
-
-          <p>
-            We're gathering feedback from people using InsiderRadar
-            to better understand their experience with the platform.
-          </p>
-        </div>
-
-        <div class="grid">
-
-          <article class="card">
-            <span class="badge">Coming Soon</span>
-
-            <h3>Early User Testimonial 01</h3>
-
-            <p>
-              An authentic user review will be added here with the
-              user's permission.
-            </p>
-          </article>
-
-          <article class="card">
-            <span class="badge">Coming Soon</span>
-
-            <h3>Early User Testimonial 02</h3>
-
-            <p>
-              An authentic user review will be added here with the
-              user's permission.
-            </p>
-          </article>
+            <span class="demo-label">Official Demo</span>
+          </div>
 
         </div>
       </div>
@@ -695,7 +756,7 @@
 
         <div class="founder-card">
 
-     InsiderTng</h3>
+          <h3>InsiderTng</h3>
 
           <div class="role">
             Founder &amp; Creator of InsiderRadar
@@ -790,4 +851,4 @@
   </script>
 
 </body>
-</html>
+  </html>
