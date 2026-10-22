@@ -3,25 +3,19 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#080c14">
-
+  <meta name="theme-color" content="#080b12">
+  <meta name="description" content="InsiderRadar provides market bias, momentum and confirmation insights to help traders make more informed decisions and spend less time watching charts.">
   <title>InsiderRadar | Trading Intelligence</title>
-
-  <meta
-    name="description"
-    content="InsiderRadar helps traders assess market bias, momentum, buying and selling pressure, and market confirmation, with convenient email alerts."
-  >
 
   <style>
     :root {
-      --bg: #080c14;
-      --panel: #101725;
-      --panel-light: #141e30;
-      --text: #f4f7fb;
-      --muted: #a5b1c5;
-      --accent: #64e6b0;
-      --accent-dark: #193d35;
-      --border: rgba(255,255,255,0.09);
+      --bg: #080b12;
+      --panel: #101622;
+      --panel-light: #151e2d;
+      --text: #f5f7fb;
+      --muted: #a5afc0;
+      --accent: #73e0bb;
+      --border: rgba(255,255,255,0.10);
     }
 
     * {
@@ -35,73 +29,83 @@
     }
 
     body {
+      font-family: Arial, Helvetica, sans-serif;
       background: var(--bg);
       color: var(--text);
-      font-family: Arial, Helvetica, sans-serif;
       line-height: 1.7;
     }
 
     a {
       color: inherit;
-      text-decoration: none;
     }
 
     .container {
       width: min(1100px, 90%);
-      margin: 0 auto;
+      margin: auto;
     }
 
     header {
+      padding: 22px 0;
       border-bottom: 1px solid var(--border);
-      background: rgba(8,12,20,0.94);
     }
 
-    .nav {
-      min-height: 76px;
+    nav {
       display: flex;
-      align-items: center;
       justify-content: space-between;
-      gap: 20px;
+      align-items: center;
+      gap: 18px;
     }
 
     .logo {
-      font-size: 22px;
+      font-size: 23px;
       font-weight: 800;
-      letter-spacing: -0.7px;
+      letter-spacing: -1px;
     }
 
     .logo span {
       color: var(--accent);
     }
 
-    .nav-link {
+    .nav-links {
+      display: flex;
+      gap: 22px;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .nav-links a {
+      text-decoration: none;
       color: var(--muted);
       font-size: 14px;
     }
 
+    .nav-links a:hover {
+      color: var(--accent);
+    }
+
     .hero {
-      padding: 100px 0 85px;
+      padding: 100px 0 90px;
       text-align: center;
     }
 
     .eyebrow {
       display: inline-block;
-      padding: 7px 13px;
-      border: 1px solid rgba(100,230,176,0.25);
-      border-radius: 30px;
       color: var(--accent);
-      background: rgba(100,230,176,0.06);
+      border: 1px solid rgba(115,224,187,0.3);
+      background: rgba(115,224,187,0.06);
+      border-radius: 30px;
+      padding: 6px 14px;
       font-size: 12px;
       font-weight: 700;
-      letter-spacing: 1.5px;
+      letter-spacing: 1px;
       text-transform: uppercase;
-      margin-bottom: 25px;
+      margin-bottom: 24px;
     }
 
     h1 {
       max-width: 850px;
       margin: 0 auto 22px;
-      font-size: clamp(38px, 7vw, 68px);
+      font-size: clamp(38px, 7vw, 70px);
       line-height: 1.08;
       letter-spacing: -2.5px;
     }
@@ -111,8 +115,8 @@
     }
 
     .hero p {
-      max-width: 700px;
-      margin: 0 auto;
+      max-width: 670px;
+      margin: 0 auto 30px;
       color: var(--muted);
       font-size: 18px;
     }
@@ -120,33 +124,38 @@
     .buttons {
       display: flex;
       justify-content: center;
+      gap: 14px;
       flex-wrap: wrap;
-      gap: 13px;
-      margin-top: 32px;
+      margin-top: 28px;
     }
 
-    .button {
+    .btn {
       display: inline-block;
-      padding: 13px 21px;
+      padding: 13px 22px;
       border-radius: 8px;
+      text-decoration: none;
       font-weight: 700;
       font-size: 14px;
-      transition: 0.2s;
+      transition: 0.2s ease;
     }
 
-    .button-primary {
+    .btn-primary {
       background: var(--accent);
-      color: #07120d;
+      color: #06120e;
     }
 
-    .button-primary:hover {
+    .btn-primary:hover {
       transform: translateY(-2px);
-      opacity: 0.9;
     }
 
-    .button-secondary {
+    .btn-secondary {
       border: 1px solid var(--border);
-      background: var(--panel);
+      background: rgba(255,255,255,0.03);
+      color: var(--text);
+    }
+
+    .btn-secondary:hover {
+      border-color: var(--accent);
     }
 
     section {
@@ -154,16 +163,15 @@
     }
 
     .section-heading {
-      max-width: 720px;
-      margin: 0 auto 40px;
       text-align: center;
+      max-width: 720px;
+      margin: 0 auto 42px;
     }
 
     .section-heading h2 {
       font-size: clamp(28px, 4vw, 42px);
-      line-height: 1.2;
       letter-spacing: -1px;
-      margin-bottom: 15px;
+      margin-bottom: 12px;
     }
 
     .section-heading p {
@@ -177,14 +185,21 @@
     }
 
     .card {
+      padding: 28px;
       background: var(--panel);
       border: 1px solid var(--border);
-      border-radius: 14px;
-      padding: 28px;
+      border-radius: 15px;
+    }
+
+    .card .number {
+      color: var(--accent);
+      font-size: 13px;
+      font-weight: 800;
+      margin-bottom: 15px;
     }
 
     .card h3 {
-      font-size: 20px;
+      font-size: 21px;
       margin-bottom: 10px;
     }
 
@@ -193,153 +208,194 @@
       font-size: 15px;
     }
 
-    .number {
-      color: var(--accent);
-      font-size: 12px;
-      font-weight: 800;
-      letter-spacing: 1.5px;
-      margin-bottom: 13px;
+    .highlight {
+      background: linear-gradient(135deg, #101b24, #101622);
+      border: 1px solid rgba(115,224,187,0.2);
+      border-radius: 18px;
+      padding: 38px;
+      text-align: center;
     }
 
-    .highlight {
-      background:
-        radial-gradient(
-          ellipse at top,
-          rgba(100,230,176,0.08),
-          transparent 65%
-        );
+    .highlight h2 {
+      font-size: clamp(27px, 4vw, 40px);
+      margin-bottom: 14px;
+    }
+
+    .highlight p {
+      max-width: 700px;
+      margin: 0 auto;
+      color: var(--muted);
     }
 
     .demo-box {
-      max-width: 800px;
-      margin: 0 auto;
-      padding: 40px 25px;
-      text-align: center;
-      background: var(--panel);
-      border: 1px solid var(--border);
+      min-height: 240px;
+      border: 1px dashed rgba(115,224,187,0.35);
       border-radius: 16px;
+      background: var(--panel);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 30px;
+      text-align: center;
     }
 
     .demo-box h3 {
-      font-size: 24px;
-      margin-bottom: 12px;
+      font-size: 23px;
+      margin-bottom: 8px;
     }
 
     .demo-box p {
       color: var(--muted);
-      margin-bottom: 22px;
     }
 
-    .badge {
+    .tag {
       display: inline-block;
-      padding: 5px 10px;
-      border-radius: 20px;
-      background: var(--accent-dark);
+      margin-bottom: 18px;
+      padding: 5px 11px;
       color: var(--accent);
+      background: rgba(115,224,187,0.08);
+      border-radius: 20px;
       font-size: 12px;
       font-weight: 700;
     }
 
-    .partnership {
-      background: #0c121e;
-      border-top: 1px solid var(--border);
-      border-bottom: 1px solid var(--border);
-    }
-
-    .partnership-box {
-      max-width: 800px;
-      margin: 0 auto;
-      text-align: center;
-    }
-
-    .partnership-box p {
-      color: var(--muted);
-      margin: 15px 0;
-    }
-
     .founder {
-      text-align: center;
+      display: grid;
+      grid-template-columns: 1fr 1.5fr;
+      gap: 30px;
+      align-items: center;
     }
 
-    .founder-card {
-      max-width: 650px;
-      margin: 0 auto;
-      padding: 35px 25px;
+    .founder-visual {
+      min-height: 250px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 16px;
+      background: linear-gradient(145deg, #14232b, #101622);
       border: 1px solid var(--border);
-      border-radius: 14px;
-      background: var(--panel);
+      text-align: center;
+      padding: 25px;
     }
 
-    .founder-card h3 {
-      font-size: 25px;
-      margin-bottom: 4px;
+    .founder-visual strong {
+      display: block;
+      font-size: 28px;
     }
 
-    .founder-card .role {
+    .founder-visual span {
       color: var(--accent);
-      font-size: 14px;
+      font-size: 13px;
+      letter-spacing: 2px;
+    }
+
+    .founder-copy h2 {
+      font-size: 34px;
+      margin-bottom: 14px;
+    }
+
+    .founder-copy p {
+      color: var(--muted);
       margin-bottom: 15px;
     }
 
-    .founder-card p {
+    .testimonial-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .testimonial {
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 25px;
+    }
+
+    .testimonial h3 {
+      margin-bottom: 8px;
+    }
+
+    .testimonial p {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .partnership {
+      background: linear-gradient(145deg, #101923, #0b1019);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 40px;
+    }
+
+    .partnership h2 {
+      font-size: clamp(28px, 4vw, 42px);
+      margin-bottom: 15px;
+    }
+
+    .partnership p {
+      color: var(--muted);
+      margin-bottom: 15px;
+    }
+
+    .partnership ul {
+      padding-left: 20px;
+      margin: 18px 0 25px;
+    }
+
+    .partnership li {
+      margin-bottom: 9px;
       color: var(--muted);
     }
 
-    .contact {
-      text-align: center;
-      background:
-        radial-gradient(
-          ellipse at center,
-          rgba(100,230,176,0.07),
-          transparent 70%
-        );
-    }
-
-    .contact p {
-      color: var(--muted);
-      margin: 15px auto 25px;
-      max-width: 650px;
+    .disclaimer {
+      font-size: 12px;
+      color: #7f8a9c;
+      margin-top: 25px;
     }
 
     footer {
-      padding: 28px 0;
       border-top: 1px solid var(--border);
+      padding: 28px 0;
       color: var(--muted);
-      font-size: 12px;
-      text-align: center;
+      font-size: 13px;
     }
 
-    footer p + p {
-      margin-top: 8px;
+    .footer-content {
+      display: flex;
+      justify-content: space-between;
+      gap: 15px;
+      flex-wrap: wrap;
     }
 
-    @media (max-width: 650px) {
+    @media (max-width: 700px) {
+      .nav-links {
+        gap: 12px;
+      }
+
+      .nav-links a {
+        font-size: 12px;
+      }
+
       .hero {
         padding: 75px 0 65px;
       }
 
-      h1 {
-        letter-spacing: -1.5px;
+      .grid,
+      .founder,
+      .testimonial-grid {
+        grid-template-columns: 1fr;
       }
 
-      .hero p {
-        font-size: 16px;
+      .card,
+      .highlight,
+      .partnership {
+        padding: 25px;
       }
 
       section {
         padding: 55px 0;
-      }
-
-      .grid {
-        grid-template-columns: 1fr;
-      }
-
-      .card {
-        padding: 23px;
-      }
-
-      .nav {
-        min-height: 65px;
       }
     }
   </style>
@@ -348,365 +404,278 @@
 <body>
 
   <header>
-    <div class="container nav">
-      <a href="#" class="logo">Insider<span>Radar</span></a>
+    <div class="container">
+      <nav>
+        <div class="logo">Insider<span>Radar</span></div>
 
-      <a class="nav-link" href="#partnership">
-        Partnership Opportunities
-      </a>
+        <div class="nav-links">
+          <a href="#features">Features</a>
+          <a href="#demo">Demo</a>
+          <a href="#founder">Founder</a>
+          <a href="#partnership">Partnership</a>
+        </div>
+      </nav>
     </div>
   </header>
 
   <main>
 
-    <!-- HERO -->
-
     <section class="hero">
       <div class="container">
+        <div class="eyebrow">Trading Intelligence</div>
 
-        <div class="eyebrow">
-          Trading Intelligence
-        </div>
-
-        <h1>
-          Understand the bias.<br>
-          <span>Read the momentum.</span>
-        </h1>
+        <h1>Understand the bias.<br><span>Read the momentum.</span></h1>
 
         <p>
-          InsiderRadar is a trading intelligence tool designed to help
-          traders assess market bias, evaluate momentum, identify buying
-          and selling pressure, and seek confirmation when analysing
-          potential market moves.
+          InsiderRadar helps traders assess market bias, momentum and
+          confirmation—giving them additional insight to make more informed
+          trading decisions without constantly watching the charts.
         </p>
 
         <div class="buttons">
-          <a class="button button-primary" href="#features">
-            Explore the Tool
-          </a>
-
-          <a class="button button-secondary" href="#partnership">
-            Discuss a Partnership
-          </a>
+          <a class="btn btn-primary" href="#features">Explore InsiderRadar</a>
+          <a class="btn btn-secondary" href="#partnership">Partnership Enquiries</a>
         </div>
-
       </div>
     </section>
-
-    <!-- CORE FEATURES -->
 
     <section id="features">
       <div class="container">
-
         <div class="section-heading">
-          <h2>More clarity in your market analysis.</h2>
-
+          <div class="eyebrow">What It Offers</div>
+          <h2>More insight. Less screen time.</h2>
           <p>
-            Get additional analytical insight to support your existing
-            trading approach without unnecessarily complicating your
-            decision-making process.
+            Useful market information designed to complement a trader's
+            existing strategy—not replace it.
           </p>
         </div>
 
         <div class="grid">
 
-          <article class="card">
+          <div class="card">
             <div class="number">01 / MARKET BIAS</div>
-
-            <h3>Assess Market Direction</h3>
-
+            <h3>Understand Market Direction</h3>
             <p>
-              Evaluate the direction the market may be favouring.
-              InsiderRadar provides market-bias information to help
-              traders assess potential bullish or bearish conditions
-              across supported currency pairs and timeframes.
+              Assess which direction the market may be favouring across
+              supported trading pairs and timeframes.
             </p>
-          </article>
+          </div>
 
-          <article class="card">
+          <div class="card">
             <div class="number">02 / MOMENTUM</div>
-
-            <h3>Evaluate Market Momentum</h3>
-
+            <h3>Read Market Pressure</h3>
             <p>
-              Assess directional momentum and buying or selling pressure
-              to gain additional context about current market conditions
-              and the strength of a potential move.
+              Get additional insight into market momentum and buying or
+              selling pressure before making a trading decision.
             </p>
-          </article>
+          </div>
 
-          <article class="card">
+          <div class="card">
             <div class="number">03 / CONFIRMATION</div>
-
-            <h3>Support Your Trading Decisions</h3>
-
+            <h3>Look for Confirmation</h3>
             <p>
-              Use additional analytical information to help evaluate
-              potential confirmation before making a trading decision.
-              InsiderRadar is designed to complement your strategy,
-              not replace your judgement.
+              Use additional market information to help evaluate whether
+              conditions align with your trading plan.
             </p>
-          </article>
+          </div>
 
-          <article class="card">
+          <div class="card">
             <div class="number">04 / EMAIL ALERTS</div>
-
-            <h3>Set Your Alert. Stay Focused.</h3>
-
+            <h3>Set Your Alert. Step Away.</h3>
             <p>
-              Configure available email alerts and receive notifications
-              when the relevant conditions are met. Reduce the need to
-              repeatedly check the platform and make market monitoring
-              more convenient.
+              Where email alerts are enabled, receive notifications without
+              needing to keep the market open and monitor charts constantly.
             </p>
-          </article>
+          </div>
 
         </div>
       </div>
     </section>
 
-    <!-- PRODUCT POSITIONING -->
-
-    <section class="highlight">
+    <section>
       <div class="container">
-
-        <div class="section-heading">
-          <h2>Built to complement your trading style.</h2>
-
+        <div class="highlight">
+          <div class="eyebrow">Built for Traders</div>
+          <h2>Your strategy stays yours.</h2>
           <p>
-            Whether you trade using price action, technical analysis,
-            or your own established framework, InsiderRadar provides
-            additional market information to consider as part of your
-            analysis.
+            InsiderRadar is designed to provide additional market insight
+            while allowing traders to maintain their own approach, risk
+            management and decision-making process.
           </p>
         </div>
-
-        <div class="grid">
-
-          <article class="card">
-            <h3>Keep Your Strategy</h3>
-
-            <p>
-              InsiderRadar is intended to support your existing trading
-              process rather than force you to abandon the method you
-              already use.
-            </p>
-          </article>
-
-          <article class="card">
-            <h3>Monitor More Conveniently</h3>
-
-            <p>
-              Combine market analysis with email alerts to make checking
-              market conditions more convenient and reduce unnecessary
-              time spent watching the screen.
-            </p>
-          </article>
-
-        </div>
       </div>
     </section>
-
-    <!-- PRODUCT DEMO -->
 
     <section id="demo">
       <div class="container">
-
         <div class="section-heading">
+          <div class="eyebrow">Product Demonstration</div>
           <h2>See InsiderRadar in action.</h2>
-
           <p>
-            Explore how the platform presents market-bias information
-            and how its available alert features fit into a trader's
-            workflow.
+            Explore how the platform presents market information and helps
+            traders assess bias, momentum and confirmation.
           </p>
         </div>
 
         <div class="demo-box">
-          <span class="badge">PRODUCT DEMONSTRATION</span>
-
-          <h3>InsiderRadar Demo</h3>
-
+          <span class="tag">PRODUCT DEMO</span>
+          <h3>Product Demo Video</h3>
           <p>
-            The product demonstration video will be published here.
+            Demonstration video coming soon.
           </p>
-
-          <span class="badge">Coming Soon</span>
         </div>
-
       </div>
     </section>
 
-    <!-- EARLY USERS -->
+    <section id="feedback">
+      <div class="container">
+        <div class="section-heading">
+          <div class="eyebrow">Early Feedback</div>
+          <h2>Built with traders in mind.</h2>
+          <p>
+            Feedback from early users will help guide the product's continued
+            development.
+          </p>
+        </div>
+
+        <div class="testimonial-grid">
+
+          <div class="testimonial">
+            <h3>Early User Feedback</h3>
+            <p>
+              Testimonial coming soon. Genuine feedback will be published
+              with the user's permission.
+            </p>
+          </div>
+
+          <div class="testimonial">
+            <h3>Early User Feedback</h3>
+            <p>
+              Testimonial coming soon. Genuine feedback will be published
+              with the user's permission.
+            </p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <section id="partnership">
+      <div class="container">
+        <div class="partnership">
+          <div class="eyebrow">Strategic Partnership</div>
+
+          <h2>Let's explore what's possible.</h2>
+
+          <p>
+            InsiderRadar is open to discussions with prop firms and strategic
+            partners interested in evaluating a market-intelligence product
+            designed for active traders.
+          </p>
+
+          <p>
+            I am seeking an opportunity to demonstrate the platform's
+            capabilities through a structured evaluation.
+          </p>
+
+          <ul>
+            <li>A live demonstration of InsiderRadar's core capabilities.</li>
+            <li>A structured product evaluation with agreed objectives.</li>
+            <li>Discussion of a potential long-term partnership.</li>
+            <li>Any challenge participation or account allocation would remain subject to the firm's approval and terms.</li>
+          </ul>
+
+          <a class="btn btn-primary"
+             href="mailto:insidertrading81@gmail.com?subject=InsiderRadar%20Partnership%20Enquiry">
+            Discuss a Partnership
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section id="founder">
+      <div class="container">
+        <div class="founder">
+
+          <div class="founder-visual">
+            <div>
+              <strong>InsiderRadar</strong>
+              <span>BUILT BY SEYI OLA</span>
+            </div>
+          </div>
+
+          <div class="founder-copy">
+            <div class="eyebrow">The Founder</div>
+
+            <h2>Seyi Ola</h2>
+
+            <p>
+              Founder and creator of InsiderRadar, developing a tool designed
+              to help traders gain additional insight into market bias,
+              momentum and confirmation.
+            </p>
+
+            <p>
+              The vision is to make useful market information more accessible
+              and help traders spend less time glued to their screens.
+            </p>
+
+            <div class="buttons" style="justify-content:flex-start;">
+
+              <a class="btn btn-primary"
+                 href="https://x.com/InsiderTng"
+                 target="_blank"
+                 rel="noopener noreferrer">
+                Follow InsiderTng on X ↗
+              </a>
+
+              <a class="btn btn-secondary"
+                 href="mailto:insidertrading81@gmail.com">
+                Contact the Founder
+              </a>
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
 
     <section>
       <div class="container">
-
-        <div class="section-heading">
-          <h2>Early User Feedback</h2>
-
+        <div class="highlight">
+          <h2>Market Bias. Momentum. Confirmation.</h2>
           <p>
-            We're gathering feedback from people using InsiderRadar
-            to better understand their experience with the platform.
+            Trading intelligence designed for a more informed trading process
+            and less time spent watching charts.
           </p>
         </div>
 
-        <div class="grid">
-
-          <article class="card">
-            <span class="badge">Coming Soon</span>
-
-            <h3>Early User Testimonial 01</h3>
-
-            <p>
-              An authentic user review will be added here with the
-              user's permission.
-            </p>
-          </article>
-
-          <article class="card">
-            <span class="badge">Coming Soon</span>
-
-            <h3>Early User Testimonial 02</h3>
-
-            <p>
-              An authentic user review will be added here with the
-              user's permission.
-            </p>
-          </article>
-
-        </div>
-      </div>
-    </section>
-
-    <!-- PARTNERSHIP -->
-
-    <section id="partnership" class="partnership">
-      <div class="container">
-
-        <div class="partnership-box">
-
-          <div class="eyebrow">
-            Strategic Partnerships
-          </div>
-
-          <h2>
-            Let's explore what InsiderRadar can offer.
-          </h2>
-
-          <p>
-            We're exploring opportunities to work with prop firms,
-            trading communities, and industry partners interested in
-            evaluating InsiderRadar's market-analysis and alert
-            capabilities.
-          </p>
-
-          <p>
-            The proposal is to discuss a structured product evaluation
-            using an allocation or challenge arrangement approved by
-            the relevant firm, followed by consideration of a wider
-            trader pilot or commercial partnership if appropriate.
-          </p>
-
-          <p>
-            Any evaluation would be subject to the firm's approval,
-            applicable terms, and its own assessment of the product.
-          </p>
-
-          <a
-            class="button button-primary"
-            href="mailto:insidertrading81@gmail.com?subject=InsiderRadar%20Partnership%20Enquiry"
-          >
-            Discuss a Partnership
-          </a>
-
-        </div>
-      </div>
-    </section>
-
-    <!-- FOUNDER -->
-
-    <section class="founder">
-      <div class="container">
-
-        <div class="section-heading">
-          <h2>Meet the Founder</h2>
-        </div>
-
-        <div class="founder-card">
-
-          <h3>Seyi Ola</h3>
-
-          <div class="role">
-            Founder &amp; Creator of InsiderRadar
-          </div>
-
-          <p>
-            Building InsiderRadar around a simple idea: give traders
-            additional information to assess market direction,
-            momentum, and potential confirmation while making
-            market monitoring more convenient.
-          </p>
-
-        </div>
-
-      </div>
-    </section>
-
-    <!-- CONTACT -->
-
-    <section class="contact">
-      <div class="container">
-
-        <div class="eyebrow">
-          Get in Touch
-        </div>
-
-        <h2>Interested in InsiderRadar?</h2>
-
-        <p>
-          For partnership discussions, product evaluations, or
-          collaboration enquiries, contact the founder directly.
+        <p class="disclaimer">
+          Disclaimer: InsiderRadar provides market information for
+          informational purposes only. It does not guarantee trading results,
+          profitability or successful prop firm challenges. Trading involves
+          significant risk, and users remain responsible for their own
+          decisions and risk management.
         </p>
-
-        <a
-          class="button button-primary"
-          href="mailto:insidertrading81@gmail.com?subject=InsiderRadar%20Enquiry"
-        >
-          Contact InsiderRadar
-        </a>
-
-        <p>
-          insidertrading81@gmail.com
-        </p>
-
       </div>
     </section>
 
   </main>
 
   <footer>
-    <div class="container">
-
-      <p>
-        &copy; <span id="year"></span> InsiderRadar. All rights reserved.
-      </p>
-
-      <p>
-        InsiderRadar provides analytical information for educational
-        and informational purposes. It does not guarantee market
-        direction, profitable entries, or trading outcomes.
-        Trading involves risk. Users remain responsible for their
-        own decisions and risk management.
-      </p>
-
+    <div class="container footer-content">
+      <span>© 2026 InsiderRadar. All rights reserved.</span>
+      <span>Created by Seyi Ola ·
+        <a href="https://x.com/InsiderTng"
+           target="_blank"
+           rel="noopener noreferrer"
+           style="color:#73e0bb;text-decoration:none;">
+          @InsiderTng on X
+        </a>
+      </span>
     </div>
   </footer>
-
-  <script>
-    document.getElementById("year").textContent =
-      new Date().getFullYear();
-  </script>
 
 </body>
 </html>
