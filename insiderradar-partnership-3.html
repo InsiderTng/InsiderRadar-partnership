@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#080b12" />
+  <meta name="description" content="InsiderRadar strategic partnership proposal for proprietary trading firms." />
+  <title>InsiderRadar | Strategic Partnerships</title>
+  <style>
+    :root {
+      --bg: #080b12; --panel: #101622; --panel2: #0c111b;
+      --text: #f4f7fb; --muted: #a5afc0; --line: #273244;
+      --accent: #78e0c3; --accent2: #9db8ff; --max: 1080px;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0; background: radial-gradient(ellipse at 75% 0%, #15243a 0, var(--bg) 42%);
+      color: var(--text); font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.6;
+    }
+    a { color: inherit; text-decoration: none; }
+    .wrap { width: min(var(--max), calc(100% - 40px)); margin: 0 auto; }
+    header { padding: 22px 0; border-bottom: 1px solid rgba(255,255,255,.08); }
+    .nav { display:flex; justify-content:space-between; align-items:center; gap:20px; }
+    .brand { font-weight: 800; letter-spacing: -.04em; font-size: 1.2rem; }
+    .brand span { color: var(--accent); }
+    .nav-label { color: var(--muted); font-size:.85rem; }
+    .hero { padding: 84px 0 70px; }
+    .eyebrow { display:inline-flex; gap:9px; align-items:center; color:var(--accent); font-size:.78rem; text-transform:uppercase; letter-spacing:.14em; font-weight:750; }
+    .dot { width:7px; height:7px; border-radius:50%; background:var(--accent); box-shadow:0 0 16px var(--accent); }
+    h1 { font-size:clamp(2.5rem, 7vw, 5.25rem); line-height:1.03; letter-spacing:-.065em; max-width:850px; margin:20px 0; }
+    h1 em { color:var(--accent); font-style:normal; }
+    .lead { color:#c0c9d7; font-size:clamp(1rem, 2vw, 1.2rem); max-width:700px; }
+    .actions { display:flex; flex-wrap:wrap; gap:12px; margin-top:28px; }
+    .btn { display:inline-flex; justify-content:center; align-items:center; padding:12px 18px; border-radius:9px; font-weight:750; font-size:.93rem; border:1px solid var(--line); }
+    .btn.primary { background:var(--accent); color:#07110f; border-color:var(--accent); }
+    .btn.secondary { background:rgba(255,255,255,.03); }
+    .note { margin-top:18px; color:#8995a8; font-size:.82rem; }
+    section { padding: 58px 0; border-top:1px solid rgba(255,255,255,.08); }
+    .section-kicker { color:var(--accent2); text-transform:uppercase; letter-spacing:.13em; font-size:.75rem; font-weight:800; }
+    h2 { font-size:clamp(1.8rem, 4vw, 2.7rem); line-height:1.13; letter-spacing:-.04em; margin:10px 0 14px; }
+    .section-intro { max-width:720px; color:var(--muted); margin:0 0 28px; }
+    .grid { display:grid; grid-template-columns:repeat(3, 1fr); gap:15px; }
+    .card { background:linear-gradient(180deg, rgba(255,255,255,.035), rgba(255,255,255,.015)); border:1px solid var(--line); border-radius:14px; padding:22px; min-width:0; }
+    .card h3 { margin:8px 0; font-size:1.05rem; }
+    .card p { color:var(--muted); margin:0; font-size:.94rem; }
+    .number { color:var(--accent); font-size:.8rem; font-weight:800; letter-spacing:.1em; }
+    .placeholder { border:1px dashed #42516a; background:rgba(11,17,28,.72); border-radius:14px; padding:30px; text-align:center; }
+    .placeholder strong { display:block; font-size:1rem; margin-bottom:7px; }
+    .placeholder p { color:var(--muted); margin:0 auto; max-width:620px; font-size:.92rem; }
+    .split { display:grid; grid-template-columns:1fr 1fr; gap:18px; }
+    .list { padding:0; margin:18px 0 0; list-style:none; }
+    .list li { padding:10px 0 10px 26px; border-bottom:1px solid rgba(255,255,255,.07); position:relative; color:#d2d9e4; }
+    .list li:before { content:"✓"; position:absolute; left:0; color:var(--accent); font-weight:800; }
+    .proposal { background:linear-gradient(135deg, rgba(120,224,195,.08), rgba(157,184,255,.05)); border:1px solid #34485a; border-radius:18px; padding:clamp(22px, 4vw, 38px); }
+    .proposal .grid { margin-top:22px; }
+    .small { color:#8995a8; font-size:.82rem; }
+    footer { border-top:1px solid rgba(255,255,255,.08); padding:26px 0 38px; color:#8792a5; font-size:.82rem; }
+    @media (max-width: 760px) {
+      .hero { padding:60px 0 48px; }
+      .grid, .split { grid-template-columns:1fr; }
+      section { padding:44px 0; }
+      .nav-label { display:none; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="wrap nav">
+      <a class="brand" href="#top" aria-label="InsiderRadar home">Insider<span>Radar</span></a>
+      <div class="nav-label">Strategic Partnership Proposal</div>
+    </div>
+  </header>
+
+  <main id="top">
+    <div class="wrap hero">
+      <div class="eyebrow"><span class="dot"></span> Technology evaluation partnership</div>
+      <h1>Trading intelligence.<br><em>Less screen time.</em></h1>
+      <p class="lead">InsiderRadar is a trading technology platform designed to help traders assess market bias and receive email alerts—making market monitoring more efficient.</p>
+      <p class="lead">We're inviting proprietary trading firms to explore a structured evaluation of the platform and the potential value it could bring to their trader communities.</p>
+      <div class="actions">
+        <a class="btn primary" href="#demo">View product demo ↓</a>
+        <a class="btn secondary" href="#proposal">Explore the proposal</a>
+      </div>
+      <p class="note">For discussion purposes. This proposal does not guarantee trading performance, challenge completion, or financial returns.</p>
+    </div>
+
+    <section id="platform">
+      <div class="wrap">
+        <div class="section-kicker">01 / The platform</div>
+        <h2>Built to make market monitoring more practical.</h2>
+        <p class="section-intro">InsiderRadar is intended to support a trader's existing decision-making process—not replace their strategy or guarantee outcomes.</p>
+        <div class="grid">
+          <article class="card"><div class="number">CAPABILITY 01</div><h3>Market-bias analysis</h3><p>Review the platform's market-bias output for supported instruments and timeframes.</p></article>
+          <article class="card"><div class="number">CAPABILITY 02</div><h3>Email alerts</h3><p>Configure alerts so traders can check relevant updates without constantly watching charts.</p></article>
+          <article class="card"><div class="number">CAPABILITY 03</div><h3>Workflow support</h3><p>Use the output as one input in a trader's own analysis, risk controls, and trading plan.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="demo">
+      <div class="wrap">
+        <div class="section-kicker">02 / Product walkthrough</div>
+        <h2>See InsiderRadar in action.</h2>
+        <p class="section-intro">A short walkthrough will demonstrate the real product workflow, from selecting a market to reviewing its output and setting an email alert.</p>
+        <div class="placeholder">
+          <strong>Product demo video — placeholder</strong>
+          <p>Add your 2–3 minute screen recording here when it is ready. Show the live interface and actual features; avoid using mock results as if they were real.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="evidence">
+      <div class="wrap">
+        <div class="section-kicker">03 / Supporting evidence</div>
+        <h2>Evidence, presented transparently.</h2>
+        <p class="section-intro">Supporting materials will be added as they become available. Each item should be authentic, relevant, and clearly labelled.</p>
+        <div class="split">
+          <div class="placeholder">
+            <strong>Challenge certificate — placeholder</strong>
+            <p>Add the Maven challenge certificate here. State exactly what was passed and under what conditions. Do not imply InsiderRadar was used if it was not.</p>
+          </div>
+          <div class="placeholder">
+            <strong>User feedback — placeholders</strong>
+            <p>Add genuine testimonials from users who have tried InsiderRadar, with their permission. Do not publish invented names, quotes, or performance claims.</p>
+          </div>
+        </div>
+        <p class="small" style="margin-top:14px">Any account statements or verification material should be shared privately and securely when appropriate. Never publish passwords or account credentials on this page.</p>
+      </div>
+    </section>
+
+    <section id="proposal">
+      <div class="wrap">
+        <div class="proposal">
+          <div class="section-kicker">04 / Proposed collaboration</div>
+          <h2>Evaluate the technology. Measure the value. Explore what comes next.</h2>
+          <p class="section-intro">We propose an initial evaluation using the firm's maximum eligible challenge allocation, subject to its rules and approval. The aim is to assess the product transparently and identify whether a wider collaboration makes commercial sense.</p>
+          <div class="grid">
+            <article class="card"><div class="number">STEP 01</div><h3>Structured evaluation</h3><p>Demonstrate the platform and document its use, reliability, and observed outputs.</p></article>
+            <article class="card"><div class="number">STEP 02</div><h3>Assess trader value</h3><p>Discuss a limited pilot with selected traders if the firm sees potential in the technology.</p></article>
+            <article class="card"><div class="number">STEP 03</div><h3>Explore commercial fit</h3><p>If the evidence supports it, discuss options such as a technology pilot, referral arrangement, or broader partnership.</p></article>
+          </div>
+          <ul class="list">
+            <li>Evaluation scope and success measures agreed in advance.</li>
+            <li>All activity conducted within the firm's applicable trading rules.</li>
+            <li>Results documented honestly, including limitations and unsuccessful outcomes.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="wrap">
+        <div class="section-kicker">05 / Next step</div>
+        <h2>Let's discuss a structured evaluation.</h2>
+        <p class="section-intro">If your team is interested in evaluating InsiderRadar, we would welcome a conversation about the product, evaluation criteria, and potential commercial fit.</p>
+        <div class="placeholder">
+          <strong>Contact details — placeholder</strong>
+          <p>Add your professional email address and X profile before sharing this page with any firm.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <div><strong>InsiderRadar</strong> · Strategic Partnership Proposal</div>
+      <p>InsiderRadar is a decision-support tool, not financial advice. Trading involves risk. No claim is made that the platform guarantees profits, passing a challenge, or improved trading outcomes. Capabilities and evaluation terms should be confirmed before any partnership.</p>
+    </div>
+  </footer>
+</body>
+</html>
